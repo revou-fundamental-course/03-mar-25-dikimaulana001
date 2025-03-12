@@ -1,30 +1,97 @@
 /* css */
-.main-header{
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.main-logo { 
-    height: 50px;
-    width: 50px;
-    background-image: url(https://picsum.photos/200); 
-    background-position: center;
-    background-size: cover;
-    border-radius: 50%;    
+    background: rgba(109, 109, 39, 0.801);
+    padding: 10px 20px;
+    color: white;
 }
 
-nav>a {
-    padding: 8px;
-    border: 1px solid;
-    text-decoration: none;
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
     color: black;
 }
-.banner-img {
+
+/* Style navigation bar */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+.nav-links a:hover {
+    background: #555;
+    border-radius: 5px;
+    color: white;
+}
+/* end style navigation bar */
+
+
+/* responsive dibawah ukuran 600 pixel */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    .message-us-content {
+        flex-direction: column;
+    }
+}
+
+ */
+
+/* Banner Container untuk autoslides */
+.banner-container {
     border: 1px solid;
     height: 500px;
     align-content: center;
     text-align: center;
 }
+
+.slides {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    height: 100%
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display:block;
+}
+/* end of banner autoslides */
 
 .our-profile-content {
     border: 1px solid;
@@ -47,6 +114,51 @@ nav>a {
     height: 500px;
     align-content: center;
     text-align: center;
+}
+
+.form-container, .result-container {
+    width: 100%;
+    /* border: 1px solid black; */
+    padding: 15px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+label {
+    width: 120px;
+    font-weight: bold;
+}
+input, textarea {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #000;
+}
+.gender-group {
+    display: flex;
+    align-items: left;
+}
+button {
+    padding: 8px 15px;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+button:active {
+    background: #888;
 }
 
 footer {

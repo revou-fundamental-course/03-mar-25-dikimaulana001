@@ -1,28 +1,28 @@
 // js
 
-let slideIndex =0;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+let currentIndex = 1;
+function nextSlide(){
+    const slides = document.querySelector(".slides");
+    currentIndex = (currentIndex + 1) % 3;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-function currentSlide(n){
-    showSlides(slideIndex = n)
+setInterval(nextSlide, 3000);
+
+function updateResult() {
+    document.getElementById("resUser").innerText = document.getElementById("name").value;
+    document.getElementById("resName").innerText = document.getElementById("name").value;
+    document.getElementById("resDob").innerText = document.getElementById("dob").value;
+    document.getElementById("resGender").innerText = document.querySelector('input[name="gender"]:checked').value;
+    document.getElementById("resMessage").innerText = document.getElementById("message").value;
+    
+    let currentTime = new Date().toString();
+    document.getElementById("time").innerText = currentTime;
 }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+function handleSubmit(event) {
+    event.preventDefault();
+    updateResult();
 }
+
+document.getElementById("messageForm").addEventListener("button", handleSubmit);
