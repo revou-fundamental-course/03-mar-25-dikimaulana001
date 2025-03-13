@@ -1,16 +1,17 @@
 /* css */
-
-/* * {
+* {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-} */
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(109, 109, 39, 0.801);
+    background: rgb(25, 13, 254);
     padding: 10px 20px;
     color: white;
 }
@@ -46,6 +47,15 @@
 }
 /* end style navigation bar */
 
+ /* text greeting bawah navbar */
+ .greeting-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+/* end text greeting */
+
 
 /* responsive dibawah ukuran 600 pixel */
 @media (max-width: 600px) {
@@ -61,12 +71,20 @@
     .message-us-content {
         flex-direction: column;
     }
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .achievement-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
  */
 
 /* Banner Container untuk autoslides */
-.banner-container {
+.slider-container {
     border: 1px solid;
     height: 500px;
     align-content: center;
@@ -91,30 +109,119 @@ img {
     object-fit: fill;
     display:block;
 }
+
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
 /* end of banner autoslides */
 
-.our-profile-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
+/* PROFILE SECTION */
+.profile-section {
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-content {
+    flex: 1;
+}
+
+.profile-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* ACHIEVEMENT SECTION */
+.achievement-section {
+    margin: 40px auto;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.achievement-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.achievement-box {
+    width: 120px;
     text-align: center;
 }
 
-.achievement-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
-    text-align: center;
+.achievement-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.achievement-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.achievement-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* MESSAGE US SECTION */
+/* css untuk form dan result form */
 .message-us-content {
     display: flex;
     justify-content: space-between;
-    border: 1px solid;
+    /* border: 1px solid; */
     height: 500px;
     align-content: center;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .form-container, .result-container {
     width: 100%;
@@ -126,7 +233,7 @@ img {
 .form-group {
     display: flex;
     align-items: center;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .form-group {
@@ -144,13 +251,21 @@ input, textarea {
     padding: 5px;
     border: 1px solid #000;
 }
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
 .gender-group {
     display: flex;
     align-items: left;
 }
 button {
     padding: 8px 15px;
-    background: #ccc;
+    background: #0033ff;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -160,6 +275,8 @@ button {
 button:active {
     background: #888;
 }
+/* end css untuk form dan result form */
+
 
 footer {
     text-align: center;
